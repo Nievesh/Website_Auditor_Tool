@@ -18,7 +18,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-## 3. Download Dependencies
+## 3. Install Dependencies
 
 ```
 pip install -r requirements.txt
@@ -40,7 +40,12 @@ uvicorn app.main:app --reload
 ## 6. Open a second terminal and enter the frontend folder
 ```
 cd frontend
-```  
+```
+
+## 7. Install Dependencies 
+```
+npm install
+```
 
 ## 7. Start the frontend server
   ```
@@ -60,12 +65,11 @@ npm start
 
 ### AI Design Decisions
 
-  - The system is designed to force the LLM to output valid JSON objects to ensure the frontend can parse recommendations reliably and avoid common rendering errors.
-  - The user prompt is constructed by injecting raw scraped data (word counts, heading hierarchies, etc.) directly into the prompt to prevent hallucinations and ensure non-generic insights .
+  - The system is designed to force the LLM to output valid JSON objects to ensure the frontend can provide recommendations reliably and avoid common rendering errors.
+  - The user prompt is constructed by embedding scraped data (word counts, heading hierarchies, etc.) directly into the prompt. This is done to prevent hallucinations and ensure non-generic insights .
 
 ### Trade-offs
-  -  Prioritized immediate actionable insights and core factual metrics over complex SEO technical audits to maintain engineering clarity.
-  
+  -  Prioritized speed and immediate insights/metrics over in-depth, complicated and technical audits to maintain clarity.
   
 ## Future Improvements with more Time
   - Adding a database (e.g., Supabase or PostgreSQL) to track audit history over time for recurring users.
