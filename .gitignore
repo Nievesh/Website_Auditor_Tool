@@ -1,0 +1,23 @@
+# --- SENSITIVE DATA ---
+# This ignores the .env file containing your Groq API key [cite: 54]
+.env
+
+# --- BACKEND / PYTHON ---
+__pycache__/
+*.pyc
+venv/
+.venv
+env/
+
+# --- FRONTEND / NODE ---
+# This ignores the heavy node_modules folder
+node_modules/
+.DS_Store
+dist/
+build/
+npm-debug.log*
+
+# --- PROJECT SPECIFIC ---
+# If you only want to submit logs.md for your latest audit, 
+# you can leave this out, or ignore local temp files.
+#.vscode/
