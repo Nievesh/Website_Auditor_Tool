@@ -18,7 +18,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-## 3. Download Dependencies
+## 3. Install Dependencies
 
 ```
 pip install -r requirements.txt
@@ -40,7 +40,12 @@ uvicorn app.main:app --reload
 ## 6. Open a second terminal and enter the frontend folder
 ```
 cd frontend
-```  
+```
+
+## 7. Install Dependencies 
+```
+npm install
+```
 
 ## 7. Start the frontend server
   ```
