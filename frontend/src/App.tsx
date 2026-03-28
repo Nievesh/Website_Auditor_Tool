@@ -69,8 +69,9 @@ function App() {
     if (!url) return;
     setLoading(true);
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/audit`, { params: { url } });
-      setData(response.data);
+      const response = await fetch(`/api/audit?url=${url}`);      
+      const data = await response.json();
+      setData(data);
     } catch (error: any) {
       alert(`Audit failed: ${error.response?.data?.detail || "Check backend connection"}`);
     }
