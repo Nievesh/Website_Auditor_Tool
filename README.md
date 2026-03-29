@@ -74,5 +74,6 @@ npm start
 ## Future Improvements with more Time
   - Adding a database (e.g., Supabase or PostgreSQL) to track audit history over time for recurring users.
   - Optimisations towards auditing websites, reducing time taken
-  - More visually appealing layout
+  - More Visually Appealing Layout
+  - Proper Application Deployment
 
