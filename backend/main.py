@@ -11,6 +11,13 @@ from groq import Groq
 from dotenv import load_dotenv
 
 # --- CONFIGURATION ---
+
+# Try to load .env only if it exists (local development)
+# In Vercel, it will skip this and use the Dashboard variables
+env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
+if os.path.exists(env_path):
+    load_dotenv(env_path)
+
 load_dotenv(os.path.join("..", ".env"))
 GROQ_KEY = os.getenv("GROQ_API_KEY")
 if not GROQ_KEY:
@@ -88,7 +95,7 @@ def scrape_metrics(url: str, html: str) -> AuditMetrics:
     )
 
 # --- ROUTES ---
-@app.get("/audit")
+@app.get("/audit") # Audits a URL and returns both factual metrics and AI insights
 async def perform_audit(url: str):
     try:
         async with httpx.AsyncClient() as http:

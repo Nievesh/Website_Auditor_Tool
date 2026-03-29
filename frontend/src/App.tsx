@@ -16,6 +16,7 @@ interface AuditData {
   ai_insights: string;
 }
 
+// Utility to render text with **markdown bolding** from backend insights
 const renderFormattedText = (text: string) => {
   if (typeof text !== 'string') return text;
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -59,6 +60,7 @@ const AnalysisBlock = ({ title, content, color }: { title: string, content: stri
   </div>
 );
 
+// Main App Component
 function App() {
   const [url, setUrl] = useState('');
   const [data, setData] = useState<AuditData | null>(null);
@@ -77,8 +79,8 @@ function App() {
     }
     setLoading(false);
   };
-
-  return (
+ 
+  return ( // Overall page styling: light background, centered container, modern font
     <div style={{ padding: '40px 20px', backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif' }}>
       {/* Container widened to reach page ends */}
       <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
